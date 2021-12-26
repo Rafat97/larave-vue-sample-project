@@ -104,7 +104,19 @@ php artisan serve
  http://localhost:8000/
 ```
 
+# Sample output screenshot
 
+## Page 1 
+
+![image info](./public/img/page_1.png)
+
+## Page 2
+
+![image info](./public/img/page_2.png)
+
+## Page 3
+
+![image info](./public/img/page_3.png)
 
 # Contributed
 
