@@ -1,7 +1,7 @@
 # Laravel + VueJs + Docker
 
 # Installation 
-## Docker Seture
+## Docker Setup
  
 1. Clone the project
 
