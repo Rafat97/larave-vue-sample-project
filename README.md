@@ -23,7 +23,19 @@ $ docker-compose up -d --build
 
 4. First time you need to wait 5-10min. Because for the database initialization
 
-5. 
+5. Go to this URL for laravel project
+
+```bash
+ http://localhost:9081/
+```
+
+5. Go to this URL for phpmyadmin. [username: root]
+
+```bash
+ http://localhost:6601/
+```
+
+
 
 
 ## Manual Approch
