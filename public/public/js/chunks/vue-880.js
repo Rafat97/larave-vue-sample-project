@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[880],{9880:(e,t,l)=>{l.r(t),l.d(t,{default:()=>s});const s=(0,l(1900).Z)({},(function(){var e=this,t=e.$createElement;return(e._self._c||t)("p",[e._v("404 "+e._s(e.$route.params.path))])}),[],!1,null,null,null).exports}}]);

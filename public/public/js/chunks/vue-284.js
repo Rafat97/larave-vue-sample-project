@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[284],{9284:(e,l,t)=>{t.r(l),t.d(l,{default:()=>s});const s=(0,t(1900).Z)({},(function(){var e=this,l=e.$createElement;return(e._self._c||l)("p",[e._v("Hello World! "+e._s(e.$route.params.path))])}),[],!1,null,null,null).exports}}]);
