@@ -29,7 +29,7 @@ $ docker-compose up -d --build
  http://localhost:9081/
 ```
 
-5. Go to this URL for phpmyadmin. [username: root]
+6. Go to this URL for phpmyadmin. [username: root]
 
 ```bash
  http://localhost:6601/
