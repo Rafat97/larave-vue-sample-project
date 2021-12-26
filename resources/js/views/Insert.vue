@@ -420,7 +420,7 @@ export default {
 
       //   console.log(this.formData);
       axios
-        .post("http://localhost:8000/api/developer", formData, {
+        .post("/api/developer", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

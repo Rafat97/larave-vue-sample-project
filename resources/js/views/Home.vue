@@ -53,20 +53,6 @@
                 Using Laravel resource API. And Database as MySQL. Image upload
                 using store.
               </p>
-              <!-- <a class="mt-3 text-indigo-500 inline-flex items-center"
-                >Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a> -->
             </div>
           </div>
           <div class="flex flex-col mb-10 lg:items-start items-center">
@@ -106,20 +92,48 @@
               <p class="leading-relaxed text-base">
                 This project Use VueJs As a UI library.
               </p>
-              <!-- <a class="mt-3 text-indigo-500 inline-flex items-center"
-                >Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a> -->
+              
+            </div>
+          </div>
+
+           <div class="flex flex-col mb-10 lg:items-start items-center">
+            <div
+              class="
+                w-12
+                h-12
+                inline-flex
+                items-center
+                justify-center
+                rounded-full
+                bg-indigo-100
+                text-indigo-500
+                mb-5
+              "
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <path
+                  d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                Setup with docker
+              </h2>
+              <p class="leading-relaxed text-base">
+                This project you can setup using docker-compose. 
+              </p>
+              
             </div>
           </div>
         </div>

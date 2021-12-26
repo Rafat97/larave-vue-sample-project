@@ -19,32 +19,40 @@ services:
     #         - ./docker-compose/nginx:/etc/nginx/conf.d
     #     networks:
     #         - my-network-dockerApp
-    # app:
-    #     build:
-    #         args:
-    #             user: rafat
-    #             uid: 1000
-    #         context: ./
-    #         dockerfile: Dockerfile
-    #     image: test-app
-    #     container_name: test-app-container
-    #     restart: always
-    #     working_dir: /var/www/
-    #     depends_on:
-    #         - db
-    #         - nginx
-    #     volumes:
-    #     - ./:/var/www
-    #     networks:
-    #         - my-network-dockerApp
 
-    # app-dev:
+
+    app-dev:
+        build:
+            context: ./
+            dockerfile: ./docker-compose/dockerFIle/Dockerfile.DEV
+        container_name: "test-app-container-dev"
+        image: "test-app-image-dev"
+        
+        restart: always
+        volumes:
+          - ./:/var/www
+        environment:
+             PROJECT_DB_HOST: "db"
+             PROJECT_DB_PORT: "3306"
+             PROJECT_DB_DATABASE: "testapp_db"
+             PROJECT_DB_USERNAME: "root"
+             PROJECT_DB_PASSWORD: ""
+             PROJECT_APP_DEBUG: "false"
+
+        ports:
+          - "9081:8000"
+        depends_on:
+            - db
+        networks:
+            - my-network-dockerApp
+        command: bash -c "php artisan migrate && php artisan storage:link && php artisan optimize:clear && php artisan cache:clear && php artisan config:cache &&  php artisan cache:clear && php artisan serve --host=0.0.0.0 "
+
+    # app-prod:
     #     build:
     #         context: ./
-    #         dockerfile: ./docker-compose/dockerFIle/Dockerfile.DEV
-    #     container_name: "test-app-container-dev"
-    #     image: "test-app-image-dev"
-    #     command: php artisan serve
+    #         dockerfile: ./docker-compose/dockerFIle/Dockerfile.PROD
+    #     container_name: "test-app-container-prod"
+    #     image: "test-app-image-prod"
     #     restart: always
     #     environment:
     #          PROJECT_DB_HOST: "db"
@@ -60,29 +68,6 @@ services:
     #         - db
     #     networks:
     #         - my-network-dockerApp
-
-
-    app-prod:
-        build:
-            context: ./
-            dockerfile: ./docker-compose/dockerFIle/Dockerfile.PROD
-        container_name: "test-app-container"
-        image: "test-app-image"
-        restart: always
-        environment:
-             PROJECT_DB_HOST: "db"
-             PROJECT_DB_PORT: "3306"
-             PROJECT_DB_DATABASE: "testapp_db"
-             PROJECT_DB_USERNAME: "root"
-             PROJECT_DB_PASSWORD: ""
-             PROJECT_APP_DEBUG: "true"
-
-        ports:
-          - "9088:8000"
-        depends_on:
-            - db
-        networks:
-            - my-network-dockerApp
 
     db:
         image: mysql:latest

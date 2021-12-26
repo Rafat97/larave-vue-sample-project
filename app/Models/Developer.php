@@ -25,7 +25,10 @@ class Developer extends Model
     {
 
         $store_path = $this->image_path;
-        $url = url(Storage::url($this->image_path));
+        // $url = url(Storage::url($this->image_path));
+        // $url = url("/api/developer/avatars_image?path=".$this->image_path);
+        // $url = $store_path;
+        $url = route('api.developer.avatars_image',['path' => $this->image_path]);
         return "{$url}";
     }
 }

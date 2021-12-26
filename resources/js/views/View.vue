@@ -254,7 +254,7 @@ export default {
         return;
       }
       axios
-        .delete("http://localhost:8000/api/developer/" + id)
+        .delete("/api/developer/" + id)
         .then((response) => {
           this.getDeveloper();
         })
@@ -265,7 +265,7 @@ export default {
     getDeveloper() {
       this.loading = true;
       axios
-        .get("http://localhost:8000/api/developer")
+        .get("/api/developer")
         .then((response) => {
           this.developer_data = response.data.data;
           this.loading = false;

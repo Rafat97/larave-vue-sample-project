@@ -18,7 +18,7 @@ use App\Http\Controllers\DeveloperController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/developer/avatars_image',  [DeveloperController::class, 'getAvatar']);
+Route::get('/developer/avatars_image',  [DeveloperController::class, 'getAvatar'])->name('api.developer.avatars_image');
 
 
 Route::resource('developer', DeveloperController::class);

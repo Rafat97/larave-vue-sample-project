@@ -445,7 +445,7 @@ export default {
       this.loading = true;
       console.log(id);
       axios
-        .get("http://localhost:8000/api/developer/" + id)
+        .get("/api/developer/" + id)
         .then((response) => {
           //   this.developer_data = response.data.data;
           //   console.log(response.data);
@@ -491,7 +491,7 @@ export default {
       if (this.formData.avatar) {
         formData.append("image", this.formData.avatar);
       }
-      const url = "http://localhost:8000/api/developer/" + this.edited_id;
+      const url = "/api/developer/" + this.edited_id;
       axios
         .post(url, formData, {
           headers: {

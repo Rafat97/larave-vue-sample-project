@@ -15,8 +15,15 @@ $ git clone https://github.com/Rafat97/laravel-vue-sample-project
 $ cd laravel-vue-sample-project
 ```
 
-3. Create a `.env` file. And add the database information. Ex:
+3. Run docker-compose file
 
+```bash
+$ docker-compose up -d --build
+```
+
+4. First time you need to wait 5-10min. Because for the database initialization
+
+5. 
 
 
 ## Manual Approch
@@ -35,7 +42,7 @@ $ cd laravel-vue-sample-project
 
 
 
-3. Create a `.env` file. And add the database information. Ex:
+3. Create a `.env` file. And add your database information. Ex:
 
 ```bash
 APP_DEBUG=true

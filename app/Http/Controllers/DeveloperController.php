@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Developer;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\StoreDeveloperRequest;
@@ -168,16 +169,24 @@ class DeveloperController extends Controller
 
     public function getAvatar(Request $request)
     {
-
         $request_path = "app/public/".$request->path;
         $path = storage_path($request_path);
-        if(!File::exists($path)){
-            echo "find";
-            $path = storage_path('app/public/default/') . 'default_avatar.jpg';
+        $file = null;
+        $type = null;
+        if (!Cache::has($request_path)) {
+            if(!File::exists($path)){
+                echo "find";
+                $path = storage_path('app/public/default/') . 'default_avatar.jpg';
+            }
+            $file = File::get($path);
+            $type = File::mimeType($path);
+    
+            Cache::put($request_path, $file, $seconds = 10);
         }
-
-        $file = File::get($path);
-        $type = File::mimeType($path);
+        else{
+            $file = Cache::get($request_path);
+            $type = File::mimeType($path);
+        }
 
         $response = \Response::make($file, 200);
         $response->header("Content-Type", $type);
