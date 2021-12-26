@@ -1,1 +1,1 @@
-# larave-vue-sample-project
+# Laravel + VueJs + Docker
